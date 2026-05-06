@@ -1,7 +1,7 @@
 # Assignment 3 - Complete Documentation
 
-**Student Name**: [Your Full Name]  
-**Student ID**: [Your ID]  
+**Student Name**: [Layan Mohammed Aljuhayyim]  
+**Student ID**: [445052092]  
 **Date Submitted**: [Submission Date]
 
 ---
@@ -31,43 +31,43 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [Date, Time]
-**What I implemented**: 
+### Entry 1 - [May 6, 2026, 9:27 PM]
+**What I implemented**: I changed the student ID in the code from the default ID to my own student ID.
 
 **Challenges encountered**: 
-
+There were no major challenges because it was only changing one variable.
 **How I solved it**: 
-
+I found the studentID variable in the main() method and replaced it with my actual ID.
 **Testing approach**: 
-
+I ran the program and checked that my student ID appeared correctly in the github.
 **Time spent**: 
-
+10 minutes
 ---
 
-### Entry 2 - [Date, Time]
+### Entry 2 - [May 6, 2026, 9:40 PM]
 **What I implemented**: 
-
+I added ReentrantLock to protect the shared resources like context switches, completed processes, waiting time, and execution log.
 **Challenges encountered**: 
-
+At first I wasn’t sure if I should use one lock or multiple locks. and i had to check all the errors.
 **How I solved it**: 
-
+I decided to use separate locks for each shared resource because it makes the program more organized and allows better concurrency.
 **Testing approach**: 
-
+I tested by running the program and checking that all counters updated correctly.
 **Time spent**: 
-
+40 minutes
 ---
 
-### Entry 3 - [Date, Time]
+### Entry 3 - [May 6, 2026, 10:30 PM]
 **What I implemented**: 
-
+I added a Semaphore to control CPU access so only one process can use the CPU at a time.
 **Challenges encountered**: 
-
+I was confused at first about where to place acquire() and release() and if my logical code was fit for the rest of the code.
 **How I solved it**: 
-
+I put acquire() before the process starts execution and release() inside finally to make sure it always gets released.
 **Testing approach**: 
-
+I ran the simulation and checked that processes executed one at a time.
 **Time spent**: 
-
+55 minutes
 ---
 
 ### Entry 4 - [Date, Time]
