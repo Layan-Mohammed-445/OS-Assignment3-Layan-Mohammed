@@ -14,9 +14,9 @@
 > Set sharing to "Anyone with the link can view".
 > Test the link in incognito/private mode before submitting.
 
-**Video Link**: [Paste your personal Gmail Google Drive link here]
+**Video Link**: [https://drive.google.com/file/d/14rd__3ox8D3hIgaaqIvDoqqaJpwJmR8r/view]
 
-**Video filename**: `[YourStudentID]_Assignment3_Synchronization.mp4`
+**Video filename**: `445052092_Assignment3_Synchronization.mp4`
 
 **Verification**:
 - [ ] Link is accessible (tested in incognito mode)
@@ -331,31 +331,51 @@ Banking systems: When many customers use ATMs or online banking at the same time
 
 ## Part 6: GitHub Repository Information
 
-**Repository URL**: 
+**Repository URL**: https://github.com/Layan-Mohammed-445/OS-Assignment3-Layan-Mohammed.git
 
-**Number of commits**: 
+**Number of commits**: 12 commit
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
-
+1. Task 1
+2. Task 2
+3. Task 3
+4. Final test updates
+includes : Initial project setup and scheduler implementation
+Added ReentrantLock synchronization for shared resources
+Implemented Semaphore for CPU access control
+Final testing and code cleanup
 ---
 
 ## Summary
 
 **Total time spent on assignment**: 
-
+Approximately 3-5 hours total (including coding, debugging, testing, and video preparation)
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. I learned how to use ReentrantLock to protect shared variables in multithreading
+2. I understood how Semaphore controls access to limited resources like a CPU 
+3. I learned how race conditions can affect shared data and how synchronization prevents them
 
 **Most challenging aspect**: 
-
+The most challenging part was understanding where exactly to place lock/unlock and acquire/release without causing deadlocks or blocking the program incorrectly.
 **What I'm most proud of**: 
-
+I’m most proud of successfully implementing both locks and semaphores together in a working CPU scheduling simulation that runs consistently without race conditions.
 ---
+Additional Output copy: 
+Total Context Switches: 22
+Total Completed Processes: 11
+Total Waiting Time: 474022ms
+Average Waiting Time: 43092ms
+P1 | Priority: 3 | Burst: 4343 | Waiting: 38976
+P2 | Priority: 2 | Burst: 5542 | Waiting: 39340
+P3 | Priority: 3 | Burst: 8109 | Waiting: 56386
+P4 | Priority: 3 | Burst: 3825 | Waiting: 12112
+P5 | Priority: 1 | Burst: 5824 | Waiting: 44982
+P6 | Priority: 1 | Burst: 8861 | Waiting: 56501
+P7 | Priority: 5 | Burst: 3868 | Waiting: 24014
+P8 | Priority: 2 | Burst: 6486 | Waiting: 50893
+P9 | Priority: 3 | Burst: 9303 | Waiting: 57401
+P10 | Priority: 3 | Burst: 2897 | Waiting: 35970
+P11 | Priority: 4 | Burst: 6890 | Waiting: 57447
+Total log entries: 44
 
 **End of Documentation**
