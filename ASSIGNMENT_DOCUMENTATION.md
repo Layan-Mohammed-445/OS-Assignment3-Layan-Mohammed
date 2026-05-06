@@ -106,7 +106,9 @@ I ran the simulation and checked that processes executed one at a time.
 
 **Your Answer**:
 
-[Your answer here - 4-6 sentences with code examples]
+[The first race condition in the original code was in contextSwitchCount++. This variable is shared by all threads, and if two threads update it at the same time, one update could be lost. For example, if two threads read the value 5 at the same time, both may increase it to 6 instead of reaching 7. This causes wrong statistics in the program.
+
+The second race condition was in executionLog.add(message). The shared resource here is the ArrayList executionLog, and ArrayList is not thread-safe. If multiple threads try to add messages at the same time, some log entries may be lost or stored in the wrong order. This can make the execution history incorrect and confusing.]
 
 ---
 
@@ -115,7 +117,7 @@ I ran the simulation and checked that processes executed one at a time.
 
 **Your Answer**:
 
-[Your answer here - explain your implementation choices]
+[ReentrantLock is used to protect a specific part of the code so only one thread can access it at a time. A Semaphore controls access to a resource by allowing a certain number of threads at the same time. In my code, I used ReentrantLock for the shared counters and execution log because these are critical sections that need safe updates. For example, in incrementContextSwitch() I used contextSwitchLock.lock() and unlock(). I used a Semaphore for CPU access because only one process should use the CPU at a time, so I used cpuSemaphore.acquire() and release(). This way locks protect data, and semaphores control resource usage]
 
 ---
 
@@ -124,7 +126,7 @@ I ran the simulation and checked that processes executed one at a time.
 
 **Your Answer**:
 
-[Your answer here - reference try-finally blocks, lock ordering, etc.]
+[Deadlock is when two or more threads are waiting for each other forever and cannot continue. One prevention technique is using try-finally blocks to make sure locks or semaphores are always released even if an error happens. In my code, I used finally with both locks and semaphore release. Another prevention technique is avoiding nested locks or keeping lock usage simple. In my code, I used separate locks for different resources and did not lock them inside each other, which reduces deadlock risk. These two methods help keep the program safe and running correctly.]
 
 ---
 
@@ -137,7 +139,7 @@ I ran the simulation and checked that processes executed one at a time.
 
 **Your Answer**:
 
-[Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
+[I used separate locks for each counter, which is called fine-grained locking. I made this choice because the counters (contextSwitchCount, completedProcessCount, and totalWaitingTime) are independent and do not affect each other. This means one thread can update one counter while another thread updates another counter at the same time. If I used one lock for all counters (coarse-grained), it would be simpler but slower because every thread would have to wait even if they are using different counters. The advantage of coarse-grained locking is easier code management, but the disadvantage is less concurrency. Fine-grained locking gives better performance because it allows more parallel work. Since my counters are independent, fine-grained locking provides better concurrency and efficiency.]
 
 ---
 
