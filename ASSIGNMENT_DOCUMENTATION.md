@@ -155,7 +155,7 @@ These variables are shared between all threads. If two threads update them at th
 I used ReentrantLock with separate locks for each counter.
 **Code snippet**:
 ```java
-// public static final ReentrantLock contextSwitchLock = new ReentrantLock();
+public static final ReentrantLock contextSwitchLock = new ReentrantLock();
 public static final ReentrantLock completedProcessLock = new ReentrantLock();
 public static final ReentrantLock waitingTimeLock = new ReentrantLock();
 
@@ -201,7 +201,7 @@ The execution log is an ArrayList, and ArrayList is not thread-safe. If multiple
 I used ReentrantLock.
 **Code snippet**:
 ```java
-// public static final ReentrantLock logLock = new ReentrantLock();
+public static final ReentrantLock logLock = new ReentrantLock();
 
 public static void logExecution(String message) {
     logLock.lock();
@@ -227,7 +227,7 @@ I used 1 permit because the simulation should behave like one CPU handling one p
 It is implemented in both run() and runToCompletion().
 **Code snippet**:
 ```java
-// public static final Semaphore cpuSemaphore = new Semaphore(1);
+public static final Semaphore cpuSemaphore = new Semaphore(1);
 
 SharedResources.cpuSemaphore.acquire();
 
