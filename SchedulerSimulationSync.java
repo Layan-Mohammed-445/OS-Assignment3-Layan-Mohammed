@@ -246,7 +246,7 @@ class Process implements Runnable {
 
 public class SchedulerSimulationSync {
     public static void main(String[] args) {
-        int studentID = 445052092;
+        int studentID =445052092;
 
         Random random = new Random(studentID);
 
